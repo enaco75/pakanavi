@@ -1,0 +1,312 @@
+@charset "UTF-8";
+/* 
+font-family: 'Noto Sans JP', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Fugaz One', cursive;
+ */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #FDFFFF;
+}
+
+#wrapper {
+  position: relative;
+}
+
+img {
+  width: 100%;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #555;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+.link_btn > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  padding: 1em 2em;
+  width: 300px;
+  color: #333;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #cccccc;
+  transition: 0.3s;
+}
+
+.link_btn > a::before {
+  content: '';
+  position: absolute;
+  top: calc(50% - 2px);
+  right: -2em;
+  transform: translateY(calc(-50% - 2px)) rotate(30deg);
+  width: 12px;
+  height: 2px;
+  background-color: #2285b1;
+  transition: 0.3s;
+}
+
+.link_btn > a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -2em;
+  transform: translateY(-50%);
+  width: 70px;
+  height: 2px;
+  background-color: #2285b1;
+  transition: 0.3s;
+}
+
+.link_btn > a:hover {
+  text-decoration: none;
+  background-color: #bbbbbb;
+}
+
+.link_btn > a:hover::before,
+.link_btn > a:hover::after {
+  right: -2.5em;
+}
+
+/* -----------------------------
+     モーダル
+ ----------------------------- */
+.modal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.modal .modal_back {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.modal .modal_contents > form {
+  background-color: #fff;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 50px 30px;
+  width: 300px;
+  margin-bottom: 30px;
+}
+
+.modal .modal_contents > form h3 {
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.modal .modal_contents > form .img_wrap {
+  width: 260px;
+  height: 260px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  border-radius: 100%;
+  margin-bottom: 30px;
+}
+
+.modal .modal_contents > form .img_wrap > img {
+  object-fit: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.modal .modal_contents > form .voted_btn {
+  box-sizing: border-box;
+  margin: 30px 0 10px;
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  height: 70px;
+  line-height: 50px;
+  background-color: #D2652C;
+  padding: 10px 40px;
+  color: #fff;
+  border-radius: 50px;
+}
+
+.modal .modal_contents > form .voted_btn:hover {
+  background-color: #fff;
+  color: #D2652C;
+  border: 1px #D2652C solid;
+  transition: 0.5s;
+}
+
+.modal .modal_contents > form .cancel_btn {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  height: 70px;
+  line-height: 50px;
+  background-color: #B1B4B3;
+  padding: 10px 40px;
+  color: #fff;
+  border-radius: 50px;
+}
+
+.modal .modal_contents > form .cancel_btn:hover {
+  /* background-color: #fff;
+            color: #B1B4B3;
+            border: 1px #B1B4B3 solid; */
+  opacity: 0.6;
+  transition: 0.5s;
+}
+
+/* モーダルを隠す */
+.voteFadeOut, .none {
+  display: none;
+}
+
+main {
+  padding-top: 70px;
+  padding-bottom: 100px;
+}
+
+h2 {
+  margin-bottom: 50px;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+form ._intro, form .input_wrap {
+  width: 700px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 10px 30px;
+}
+
+form ._intro p, form .input_wrap p {
+  text-align: center;
+}
+
+form ._imtro {
+  margin-bottom: 30px;
+}
+
+form input {
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+form .input_wrap {
+  margin-bottom: 20px;
+}
+
+form label {
+  font-weight: 700;
+}
+
+form .login_blue {
+  height: 54px;
+  width: 200px;
+  background-color: #193D58;
+  color: white;
+  margin: 30px auto;
+  display: block;
+}
+
+form .login_blue:hover {
+  opacity: 0.6;
+  transition: 0.5s;
+}
+
+form .clear_btn {
+  height: 54px;
+  width: 200px;
+  margin: 30px auto;
+  display: block;
+}
+
+form .clear_btn:hover {
+  background-color: #B1B4B3;
+  transition: 0.5s;
+}
+
+form .kochira {
+  width: 604px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+form .kochira h4 {
+  margin-right: 30px;
+}
+
+form .err {
+  color: #DA6351;
+  text-align-last: left;
+}
+
+form .check_msg {
+  text-align: center;
+}
+
+.complete_msg {
+  text-align: center;
+  margin-bottom: 60px;
+  line-height: 40px;
+}
+
+#complete {
+  margin-bottom: 0;
+  max-height: 100%;
+}
+
+#complete > h2 {
+  color: #D2652C;
+}
+
+.back_allow {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 auto;
+  text-align: center;
+}
+
+.back_allow a {
+  text-decoration: none;
+  color: #555;
+}
